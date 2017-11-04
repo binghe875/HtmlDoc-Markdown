@@ -1,0 +1,37 @@
+{
+    "itme": [{
+        "name": "TX项目相关文档",
+        "description": "TX项目相关文档",
+        "doc": [{
+                "name": "API说明文档",
+                "path": "./item/tx/1.md",
+                "versions": "V0.17"
+            },
+            {
+                "name": "部署说明文档",
+                "path": "./item/tx/2.md",
+                "versions": "V0.2"
+            }, {
+                "name": "责任边界",
+                "path": "./item/tx/3.md",
+                "versions": "V0.1"
+            }, {
+                "name": "相关人员和环境介绍",
+                "path": "./item/tx/4.md",
+                "versions": "V0.1"
+            }
+        ]
+    }, {
+        "name": "BP项目相关文档",
+        "description": "BP项目相关文档",
+        "doc": [{
+            "name": "待办事项",
+            "path": "./item/bp/1.md",
+            "versions": "V0.1"
+        }]
+    }, {
+        "name": "BMAX4.0相关文档",
+        "description": "BMAX4.0相关文档",
+        "doc": []
+    }]
+}
