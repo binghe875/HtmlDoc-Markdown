@@ -82,7 +82,13 @@ require.config({
 require(['vs/editor/editor.main'], function() {
 
     editor = monaco.editor.create(document.getElementById('container'), {
-        value: '',
+        value: [
+            "# Markdown-Doc",
+            "发布markdown 文件用于网络查看。",
+            "## 使用方法",
+            "修改index.html",
+            "```html\n<a href='./page.html?url=./item/tx/2.md' class='btn btn-primary' role='button' target='_blank'>部署说明文档</a>\n```",
+        ].join('\n\n'),
         language: 'markdown',
         theme: 'vs-dark',
     });
@@ -91,8 +97,8 @@ require(['vs/editor/editor.main'], function() {
         var value = editor.getValue();
         ShowMarkdown(value);
     });
-    //默认加载readme
-    loand('./../../README.md');
+    // 加载完成就预览
+    ShowMarkdown(editor.getValue());
 });
 
 
@@ -113,12 +119,8 @@ $("#btnSave").on("click", function(e) {
 
 //加载文档
 function loandDocDropdown() {
-
     var url = "./../../item/project.json";
     $.getJSON(url, function(data) {
-
-        $("#projectname").html(data.project);
-
         $.each(data.itme, function(i, v) {
             var doc = [];
             $.each(v.doc, function(di, dv) {

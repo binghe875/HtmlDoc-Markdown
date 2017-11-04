@@ -1,19 +1,6 @@
 $(function() {
     var url = "./../../item/project.json";
     $.getJSON(url, function(data) {
-
-        $("#projectname").html(data.project);
-
-        var projectinfo = [
-            '<h1>',
-            data.project,
-            '</h1>',
-            '<p>',
-            data.description,
-            '</p>'
-        ];
-        $("#projectinfo .container").html(projectinfo.join(''));
-
         $.each(data.itme, function(i, v) {
             var doc = [];
             $.each(v.doc, function(di, dv) {
