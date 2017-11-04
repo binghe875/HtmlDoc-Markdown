@@ -4,10 +4,11 @@
 
 ## 第三方组件
 
-1. Jquery v3.2.0
-1. bootstrap V3.3.7
-1. editormd.js v1.5.0
-1. highlight.js v9.12.0
+1. [Jquery](#https://github.com/jquery/jquery) v3.2.0
+1. [bootstrap](#https://github.com/twbs/bootstrap) V3.3.7
+1. [editormd.js](#https://github.com/pandao/editor.md) v1.5.0  markdown解析
+1. [highlight.js](#https://highlightjs.org/) v9.12.0  代码美化
+1. [monaco-editor](#https://github.com/Microsoft/monaco-editor) V0.10.1  在线编辑器，代替editormd.js
 
 ## 使用方法
 
