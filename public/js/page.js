@@ -55,7 +55,6 @@ $(function() {
         });
         // 代码高亮
         hljs.initHighlighting();
-
         //为所有table标签添加bootstap支持的表格类
         $("table").addClass("table table-bordered table-hover");
         //当表格列数过长时将自动出现滚动条
