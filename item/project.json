@@ -6,7 +6,7 @@
         "description": "项目说明",
         "doc": [{
             "name": "API说明文档",
-            "path": "./item/test/1.md",
+            "path": "./README.md",
             "versions": "V0.17"
         }]
     }, {
@@ -14,7 +14,7 @@
         "description": "项目说明",
         "doc": [{
             "name": "API说明文档",
-            "path": "./item/test1/1.md",
+            "path": "./README.md",
             "versions": "V0.1"
         }]
     }]
