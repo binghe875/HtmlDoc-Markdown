@@ -114,7 +114,7 @@ $("#btnSave").on("click", function(e) {
 //加载文档
 function loandDocDropdown() {
 
-    var url = "../../item/project.json";
+    var url = "./item/project.json";
     $.getJSON(url, function(data) {
 
         $("#projectname").html(data.project);
