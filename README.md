@@ -52,6 +52,8 @@ ie10+ chrome Firefox
 
 ```json
 {
+    "project": "文档中心",
+    "description": "项目中涉及的文档，以网页形式发布，方便沟通和交流存档，并且规范文档化办公。",
     "itme": [{
         "name": "项目名称",
         "description": "项目描述",
