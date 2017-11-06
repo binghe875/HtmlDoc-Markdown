@@ -4,6 +4,10 @@ body {
     position: relative;
 }
 
+footer {
+    text-align: center;
+}
+
 .content-left {
     margin-top: 0px;
     height: 100%;

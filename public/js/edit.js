@@ -133,4 +133,8 @@ function loandDocDropdown() {
     });
 }
 
-loandDocDropdown();
+
+$(function() {
+    //加载doc文档列表
+    loandDocDropdown();
+});
