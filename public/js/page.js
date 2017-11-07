@@ -61,18 +61,24 @@ $(function() {
         $.each($('table'), function() {
             $(this).prop('outerHTML', '<div style="width: 100%;overflow-x: auto;">' + $(this).prop('outerHTML') + '</div>');
         });
+        // 增加目录样式
+        $(".markdown-toc>ul").addClass("nav nav-sidebar");
+
         //修改目录树增加折叠效果
-        $(".markdown-toc-list ul").not("ul:first").each(function() {
+        $(".markdown-toc-list ul ul").each(function() {
             $(this).hide();
         });
-        $(".markdown-toc-list li").each(function() {
-            $(this).click(function() {
-                // 隐藏同级子集
-                $(this).siblings().find("ul").hide(500);
-                //显示子集
-                $(this).children("ul").show(500);
-            });
+        $(".markdown-toc-list>li>ul li").on('click', function(e) {
+            //增加选中-删除同级选中
+            $(this).addClass('active').siblings().removeClass('active');
+            // 隐藏同级子集
+            $(this).siblings().find("ul").slideUp(500);
+            //显示子集
+            $(this).children("ul").slideToggle(500);
+            //阻止冒泡事件
+            event.stopPropagation();
         });
+
         //超链接都在新窗口打开
         $('a[href^="http"]').each(function() {
             $(this).attr('target', '_blank');

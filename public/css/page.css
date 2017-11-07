@@ -8,55 +8,119 @@ footer {
     text-align: center;
 }
 
-.content-left {
-    margin-top: 0px;
-    height: 100%;
-    width: 300px;
-    background: #F1F0F1;
-    border-right-color: rgb(221, 221, 221);
-    border-right-width: 1px;
-    border-right-style: solid;
-    overflow-y: auto;
+
+/*
+ * Sidebar
+ */
+
+
+/* Hide for mobile, show later */
+
+.sidebar {
+    display: none;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #000;
     display: block;
-    float: left;
-    position: fixed;
-    padding-left: 10px;
+    padding: 10px 15px;
 }
 
-.markdown-toc-list {
-    padding-left: 10px;
-}
-
-.markdown-toc-list>li {
+.sidebar li {
     list-style-type: none;
 }
 
-.markdown-toc-list ul {
-    padding-left: 20px;
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        padding-top: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* Scrollable contents if viewport is shorter than content. */
+        background-color: #f9fafc;
+        border-right: 1px solid #eee;
+    }
+}
+
+.nav-sidebar a:hover,
+.nav-sidebar .active>a {
+    color: #000 !important;
+}
+
+
+/* Sidebar navigation */
+
+.nav-sidebar:first-child {
+    margin-right: -21px;
+    margin-left: -20px;
+}
+
+.nav-sidebar:first-child>li>a {
+    color: #fff;
+    background-color: #367fa9;
+}
+
+.nav-sidebar ul {
+    padding-left: 0;
+}
+
+.nav-sidebar>li>ul>li>a {
+    border-left: 3px solid transparent;
+}
+
+.nav-sidebar>li>ul>li>a:hover,
+.nav-sidebar>li>ul>.active>a,
+.nav-sidebar>li>ul>.active>a:hover,
+.nav-sidebar>li>ul>.active>a:focus {
+    color: #000 !important;
+    background-color: #f4f4f5 !important;
+    border-left-color: #3c8dbc !important;
+}
+
+.nav-sidebar ul ul {
+    /* padding-left: 10px; */
+    background-color: #f4f4f5;
+}
+
+.nav-sidebar ul a {
+    color: #777;
+}
+
+.nav-sidebar ul ul a {
+    padding-left: 30px;
+    font-size: 12px;
+}
+
+.nav-sidebar ul ul ul a {
+    padding-left: 45px;
+    font-size: 10px;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
 }
 
 .markdown-body ul {
     padding-left: 20px;
-}
-
-.toc a {
-    color: #000000;
-}
-
-.toc a:hover {
-    color: #337ab7;
-}
-
-.content-right {
-    background-color: #fff;
-    margin-top: 0px;
-    margin-left: 300px;
-    width: calc(100% - 300px);
-}
-
-.markdown-body {
-    margin: 20px auto;
-    max-width: 800px;
 }
 
 .markdown-body h1,
