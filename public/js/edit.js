@@ -95,22 +95,6 @@ require(['vs/editor/editor.main'], function() {
     loand('./../../README.md');
 });
 
-
-$("#btnRun").on("click", function(e) {
-    if (editor.getValue) {
-        var value = editor.getValue();
-        ShowMarkdown(value);
-    }
-});
-
-$("#btnSave").on("click", function(e) {
-    if (editor.getValue) {
-        var value = editor.getValue();
-        var filename = "binghe875.md";
-        download(filename, value);
-    }
-});
-
 //加载文档
 function loandDocDropdown() {
 
@@ -137,4 +121,32 @@ function loandDocDropdown() {
 $(function() {
     //加载doc文档列表
     loandDocDropdown();
+
+    $("#btnRun").on("click", function(e) {
+        if (editor.getValue) {
+            var value = editor.getValue();
+            ShowMarkdown(value);
+        }
+    });
+
+    $("#btnhide").on("click", function(e) {
+        if ($("#markdownCode").css("display") == "none") {
+            $("#markdownCode").show();
+            $("#markdownView").removeClass("col-sm-12 col-md-12").addClass("col-sm-6 col-md-6");
+            $("#btnhide").text("隐藏");
+
+        } else {
+            $("#markdownCode").hide();
+            $("#markdownView").removeClass("col-sm-6 col-md-6").addClass("col-sm-12 col-md-12");
+            $("#btnhide").text("显示");
+        }
+    });
+
+    $("#btnSave").on("click", function(e) {
+        if (editor.getValue) {
+            var value = editor.getValue();
+            var filename = "binghe875.md";
+            download(filename, value);
+        }
+    });
 });

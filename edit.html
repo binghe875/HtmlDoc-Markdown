@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>文档目录</title>
+    <title>HtmlDoc-Markdown-在线编辑</title>
     <!-- Bootstrap -->
     <link href="./public/css/bootstrap.min.css" rel="stylesheet">
     <link href="./public/css/default.min.css" rel="stylesheet">
@@ -33,13 +33,18 @@
                     <li><a href="./index.html">项目目录 <span class="sr-only">(current)</span></a></li>
                     <li class="active"><a href="./edit.html"> 在线编辑</a></li>
                 </ul>
+                <div class="navbar-right" style="margin-right: 10px;">
+                    <button id="btnhide" type="button" class="btn btn-danger navbar-btn">隐藏</button>
+                    <button id="btnRun" type="button" class="btn btn-success navbar-btn">预览</button>
+                    <button id="btnSave" type="button" class="btn btn-primary navbar-btn">保存</button>
+                </div>
             </div>
         </div>
     </nav>
 
     <div class="container-fluid">
-        <div class="row" style="margin-top: 10px;margin-bottom: 5px;">
-            <div class="col-sm-6 col-md-6">
+        <div class="row" style="margin-top: 5px;">
+            <div class="col-sm-6 col-md-6" id="markdownCode">
                 <!-- Single button -->
                 <div class="btn-group pull-left">
                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -48,11 +53,9 @@
                     <ul class="dropdown-menu" id="projectItem">
                     </ul>
                 </div>
-                <button id="btnSave" type="button" class="btn btn-primary pull-right" style="margin-left:10px;">保存</button>
-                <button id="btnRun" type="button" class="btn btn-success pull-right">预览</button>
                 <div id="container" style="width:100%;border:1px solid grey"></div>
             </div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-sm-6 col-md-6" id="markdownView">
                 <div id="editormd-view"></div>
             </div>
         </div>
