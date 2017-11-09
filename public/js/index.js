@@ -1,6 +1,6 @@
 $(function() {
-    var url = "./item/project.json";
-    $.getJSON(url, function(data) {
+
+    $.getJSON(binghe_default.projectUrl, function(data) {
 
         $("#projectname").html(data.project);
 
