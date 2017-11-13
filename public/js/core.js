@@ -84,6 +84,6 @@ function ShowMarkdown(data, object, func) {
 }
 
 var binghe_default = {
-    projectUrl: "./item/project.json",
-    saveFileName: "binghe875.md"
+    projectUrl: "./item/project.json?random=" + new Date().getTime(),
+    saveFileName: new Date().getTime() + ".md"
 }

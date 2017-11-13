@@ -17,7 +17,7 @@ $(function() {
         $.each(data.itme, function(i, v) {
             var doc = [];
             $.each(v.doc, function(di, dv) {
-                doc.push('<a href="./page.html?url=' + dv.path + '" class="btn btn-primary" role="button" target="_blank">' + dv.name + '</a>');
+                doc.push('<a href="./page.html?url=' + dv.path + '&v=' + dv.versions + '" class="btn btn-primary" role="button" target="_blank">' + dv.name + '</a>');
             });
             var item = [
                 '<div class="col-sm-4 col-md-3">',

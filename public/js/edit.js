@@ -59,7 +59,7 @@ function loandDocDropdown() {
         $.each(data.itme, function(i, v) {
             var doc = [];
             $.each(v.doc, function(di, dv) {
-                doc.push('<li><a href="javascript:loand(\'' + dv.path + '\');">' + dv.name + '</a></li>');
+                doc.push('<li><a href="javascript:loand(\'' + dv.path + '?v=' + dv.versions + '\');">' + dv.name + '</a></li>');
             });
             var item = [
                 doc.join(' '),
