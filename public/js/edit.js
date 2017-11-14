@@ -1,28 +1,10 @@
-//下载文件
-function download(filename, content) {
-    var blob = new Blob([content], { type: 'text/plain' });
-    var url = window.URL.createObjectURL(blob);
-    var a = document.createElement('a');
-
-    a.style = "display: none";
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-
-    setTimeout(function() {
-        document.body.removeChild(a);
-        window.URL.revokeObjectURL(url);
-    }, 5);
-}
-
 var editor;
 
 function loand(url) {
     if (editor.setValue) {
         $.get(url, function(data) {
             editor.setValue(data);
-            ShowMarkdown(data);
+            binghe875.ShowMarkdown(data);
         });
     }
 }
@@ -43,7 +25,7 @@ require(['vs/editor/editor.main'], function() {
 
     var myBinding = editor.addCommand(monaco.KeyCode.F10, function() {
         var value = editor.getValue();
-        ShowMarkdown(value);
+        binghe875.ShowMarkdown(value);
     });
     //默认加载readme
     loand('./../../README.md');
@@ -52,7 +34,7 @@ require(['vs/editor/editor.main'], function() {
 //加载文档
 function loandDocDropdown() {
 
-    $.getJSON(binghe_default.projectUrl, function(data) {
+    $.getJSON(binghe875.Config.get().projectUrl, function(data) {
 
         $("#projectname").html(data.project);
 
@@ -78,7 +60,7 @@ $(function() {
     $("#btnRun").on("click", function(e) {
         if (editor.getValue) {
             var value = editor.getValue();
-            ShowMarkdown(value);
+            binghe875.ShowMarkdown(value);
         }
     });
 
@@ -98,7 +80,7 @@ $(function() {
     $("#btnSave").on("click", function(e) {
         if (editor.getValue) {
             var value = editor.getValue();
-            download(binghe_default.saveFileName, value);
+            binghe875.download(binghe875.Config.get().saveFileName, value);
         }
     });
 });
