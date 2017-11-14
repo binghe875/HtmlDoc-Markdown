@@ -1,23 +1,23 @@
+/**
+ * 核心方法库，增加命名空间以区分，
+ * 调用方法： binghe875.Config
+ */
 var binghe875 = {
     _defaultConfig: {
         projectUrl: "./item/project.json?random=" + new Date().getTime(),
         saveFileName: new Date().getTime() + ".md"
     },
     /**
-     * 配置信息获取
+     * 配置文件信息获取
+     * @param {object} object 新的配置文件，为空则只获取配置信息
      */
-    Config: {
-        get: function() {
-            return binghe875._defaultConfig;
-        },
-        set: function(object) {
-            binghe875._defaultConfig = $.extend({}, binghe875._defaultConfig, object);
-            return _defaultConfig;
-        }
+    Config: function(object) {
+        binghe875._defaultConfig = $.extend({}, binghe875._defaultConfig, object);
+        return binghe875._defaultConfig;
     },
     /**
      * 返回页面顶部
-     * @min_height 最小高度 默认值是600
+     * @param {number} min_height 最小高度 默认值是600
      */
     gotoTop: function(min_height) {
         var gotoTop_html = '<div id="gotoTop">TOP</div>';
@@ -46,9 +46,9 @@ var binghe875 = {
             };
         });
     },
-    /*  
+    /**  
      * 获取url链接参数
-     * @name: 参数名称
+     * @param {string} name 参数名称
      */
     getQueryString: function(name) {
         var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -58,9 +58,9 @@ var binghe875 = {
     },
     /**
      * 解析md文件
-     * @data : markdown 文件数据
-     * @object : editormd 配置对象，替换初始化对象
-     * @func : 解析完成后调用方法 
+     * @param {string} data  markdown 文件数据
+     * @param {object} object editormd 配置对象，替换初始化对象
+     * @param {function} func : 解析完成后调用方法 
      */
     ShowMarkdown: function(data, object, func) {
         var _default = {
@@ -110,8 +110,8 @@ var binghe875 = {
     },
     /**
      * 下载文件
-     * @filename: 文件名称
-     * @content: 文件内容
+     * @param {string} filename 文件名称
+     * @param {string} content 文件内容
      */
     download: function(filename, content) {
         var blob = new Blob([content], { type: 'text/plain' });

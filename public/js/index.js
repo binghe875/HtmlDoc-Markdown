@@ -1,6 +1,6 @@
 $(function() {
 
-    $.getJSON(binghe875.Config.get().projectUrl, function(data) {
+    $.getJSON(binghe875.Config().projectUrl, function(data) {
 
         $("#projectname").html(data.project);
 

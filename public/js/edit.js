@@ -1,5 +1,12 @@
+/**
+ * 编译器全局对象方便后续其他方法调用操作
+ */
 var editor;
 
+/**
+ * 加载markdown文件并预览
+ * @param {string} url 加载地址
+ */
 function loand(url) {
     if (editor.setValue) {
         $.get(url, function(data) {
@@ -9,7 +16,9 @@ function loand(url) {
     }
 }
 
-// 编译器配置
+/**
+ * 编译器配置
+ */
 require.config({
     paths: {
         'vs': 'public/js/vs'
@@ -31,10 +40,12 @@ require(['vs/editor/editor.main'], function() {
     loand('./../../README.md');
 });
 
-//加载文档
+/**
+ * 加载文档配置文件文档列表
+ */
 function loandDocDropdown() {
 
-    $.getJSON(binghe875.Config.get().projectUrl, function(data) {
+    $.getJSON(binghe875.Config().projectUrl, function(data) {
 
         $("#projectname").html(data.project);
 
@@ -54,9 +65,14 @@ function loandDocDropdown() {
 
 
 $(function() {
-    //加载doc文档列表
+    /**
+     * 加载doc文档列表    
+     */
     loandDocDropdown();
 
+    /**
+     * 预览事件
+     */
     $("#btnRun").on("click", function(e) {
         if (editor.getValue) {
             var value = editor.getValue();
@@ -64,6 +80,9 @@ $(function() {
         }
     });
 
+    /**
+     * 编辑器隐藏显示事件
+     */
     $("#btnhide").on("click", function(e) {
         if ($("#markdownCode").css("display") == "none") {
             $("#markdownCode").show();
@@ -77,6 +96,9 @@ $(function() {
         }
     });
 
+    /**
+     * 保存文件事件
+     */
     $("#btnSave").on("click", function(e) {
         if (editor.getValue) {
             var value = editor.getValue();
