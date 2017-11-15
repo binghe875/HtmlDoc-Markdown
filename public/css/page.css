@@ -80,13 +80,21 @@ footer {
 .nav-sidebar>li>ul>.active>a:hover,
 .nav-sidebar>li>ul>.active>a:focus {
     color: #000 !important;
-    background-color: #f4f4f5 !important;
+    background-color: #999999 !important;
     border-left-color: #3c8dbc !important;
 }
 
 .nav-sidebar ul ul {
     /* padding-left: 10px; */
-    background-color: #f4f4f5;
+    background-color: #cccccc;
+}
+
+.nav-sidebar ul ul li>a:hover,
+.nav-sidebar ul ul .active>a,
+.nav-sidebar ul ul .active>a:hover,
+.nav-sidebar ul ul .active>a:focus {
+    /* padding-left: 10px; */
+    background-color: #f4f4f4;
 }
 
 .nav-sidebar ul a {
