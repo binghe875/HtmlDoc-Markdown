@@ -1,9 +1,9 @@
 $(function() {
-    var _url = getQueryString("url") || url;
+    var _url = binghe875.getQueryString("url") || url;
     var _data;
     $.get(_url, function(data) {
         _data = data;
-        ShowMarkdown(data, {
+        binghe875.ShowMarkdown(data, {
             tocContainer: "#markdownMenu",
         }, function() {
             // 增加目录样式
@@ -22,7 +22,7 @@ $(function() {
                 //阻止冒泡事件
                 event.stopPropagation();
             });
-            gotoTop();
+            binghe875.gotoTop();
         });
     });
 
@@ -31,7 +31,7 @@ $(function() {
             $("#markdownMenu").show();
             $("#markdownView").removeClass("col-sm-12 col-md-12").addClass("col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2");
             $("#btnShowMenu").html("目录<br>隐藏");
-            ShowMarkdown(_data, {
+            binghe875.ShowMarkdown(_data, {
                 tocContainer: "#markdownMenu",
             }, function() {
                 // 增加目录样式
@@ -50,14 +50,14 @@ $(function() {
                     //阻止冒泡事件
                     event.stopPropagation();
                 });
-                gotoTop();
+                binghe875.gotoTop();
             });
         } else {
             $("#markdownMenu").hide();
             $("#markdownView").removeClass("col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2").addClass("col-sm-12 col-md-12");
             $("#btnShowMenu").html("目录<br>显示");
-            ShowMarkdown(_data, {}, function() {
-                gotoTop();
+            binghe875.ShowMarkdown(_data, {}, function() {
+                binghe875.gotoTop();
             });
         }
     });
