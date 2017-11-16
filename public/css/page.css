@@ -86,7 +86,7 @@ footer {
 
 .nav-sidebar ul ul {
     /* padding-left: 10px; */
-    background-color: #cccccc;
+    background-color: #f4f4f4;
 }
 
 .nav-sidebar ul ul li>a:hover,
@@ -94,7 +94,7 @@ footer {
 .nav-sidebar ul ul .active>a:hover,
 .nav-sidebar ul ul .active>a:focus {
     /* padding-left: 10px; */
-    background-color: #f4f4f4;
+    background-color: #cccccc;
 }
 
 .nav-sidebar ul a {
