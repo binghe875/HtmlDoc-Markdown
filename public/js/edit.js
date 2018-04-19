@@ -50,7 +50,7 @@ require(['vs/editor/editor.main'], function() {
         binghe875.ShowMarkdown(value);
     });
     //默认加载readme
-    loand('./../../README.md');
+    loand('./README.md');
 });
 
 /**
