@@ -123,7 +123,7 @@ $(function() {
     $("#btnSave").on("click", function(e) {
         if (editor.getValue) {
             var value = editor.getValue();
-            binghe875.download(binghe875.Config.get().saveFileName, value);
+            binghe875.download(binghe875.Config().saveFileName, value);
         }
     });
 });
