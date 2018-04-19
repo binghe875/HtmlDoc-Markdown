@@ -1,5 +1,16 @@
 $(function() {
 
+    /**
+     * 修改只适应高度
+     */
+    $("#projectItem").height(Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.documentElement.clientHeight
+    ) - 395);
+
     $.getJSON(binghe875.Config().projectUrl, function(data) {
 
         $("#projectname").html(data.project);

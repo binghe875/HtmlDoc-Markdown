@@ -3,6 +3,19 @@
  */
 var editor;
 
+
+/**
+ * 公共区域高度
+ */
+var pageHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.documentElement.clientHeight
+) - 130;
+
+
 /**
  * 加载markdown文件并预览
  * @param {string} url 加载地址
@@ -65,6 +78,14 @@ function loandDocDropdown() {
 
 
 $(function() {
+
+    /**
+     * 修改只适应高度
+     */
+    $("#editMain").height(pageHeight);
+    $("#container").height(pageHeight - 30);
+    $("#editormd-view").height(pageHeight - 15);
+
     /**
      * 加载doc文档列表    
      */
